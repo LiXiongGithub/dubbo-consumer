@@ -2,11 +2,14 @@ package com.lx.consumer;
 
 import java.io.IOException;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.lx.service.ProviderService;
 
 public class Consumer {
+	protected static Logger logger = LoggerFactory.getLogger(Consumer.class);
 
 	/**
 	 * @author lx
@@ -21,7 +24,7 @@ public class Consumer {
 		for (int i = 0; i < 1000; i++) {
 			try {
 				Thread.sleep(2000);
-				System.out.println(providerService.sayHello("李雄"));
+				logger.info(providerService.sayHello("李雄"));
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
