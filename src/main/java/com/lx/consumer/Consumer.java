@@ -17,9 +17,16 @@ public class Consumer {
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
 				new String[] {"spring.xml"});
 		context.start();
-		ProviderService providerService = (ProviderService) context.getBean("providerService");
-
-		System.out.println(providerService.sayHello("李雄"));
+		ProviderService providerService = (ProviderService) context.getBean("providerService");;
+		for (int i = 0; i < 1000; i++) {
+			try {
+				Thread.sleep(2000);
+				System.out.println(providerService.sayHello("李雄"));
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
 		System.out.println("Press any key to exit.");
 		try {
 			System.in.read();
