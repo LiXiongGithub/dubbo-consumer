@@ -24,7 +24,7 @@ public class Consumer {
 		for (int i = 0; i < 1000; i++) {
 			try {
 				Thread.sleep(2000);
-				logger.info(providerService.sayHello("李雄"));
+				logger.info(providerService.sayHello("xxx"));
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
